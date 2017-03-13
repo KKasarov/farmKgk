@@ -1,0 +1,31 @@
+C:\Users\kgkkt\Desktop\kgkblog\test C#\farmKgk\farmKgk\bin\Debug\farmKgk.exe.config
+C:\Users\kgkkt\Desktop\kgkblog\test C#\farmKgk\farmKgk\bin\Debug\farmKgk.exe
+C:\Users\kgkkt\Desktop\kgkblog\test C#\farmKgk\farmKgk\bin\Debug\farmKgk.pdb
+C:\Users\kgkkt\Desktop\kgkblog\test C#\farmKgk\farmKgk\obj\Debug\farmKgk.csprojResolveAssemblyReference.cache
+C:\Users\kgkkt\Desktop\kgkblog\test C#\farmKgk\farmKgk\obj\Debug\farmKgk.Form1.resources
+C:\Users\kgkkt\Desktop\kgkblog\test C#\farmKgk\farmKgk\obj\Debug\farmKgk.Properties.Resources.resources
+C:\Users\kgkkt\Desktop\kgkblog\test C#\farmKgk\farmKgk\obj\Debug\farmKgk.csproj.GenerateResource.Cache
+C:\Users\kgkkt\Desktop\kgkblog\test C#\farmKgk\farmKgk\obj\Debug\farmKgk.exe
+C:\Users\kgkkt\Desktop\kgkblog\test C#\farmKgk\farmKgk\obj\Debug\farmKgk.pdb
+C:\Users\kgkkt\Desktop\farmKgk\farmKgk\bin\Debug\farmKgk.exe.config
+C:\Users\kgkkt\Desktop\farmKgk\farmKgk\obj\Debug\farmKgk.exe
+C:\Users\kgkkt\Desktop\farmKgk\farmKgk\obj\Debug\farmKgk.pdb
+C:\Users\kgkkt\Desktop\farmKgk\farmKgk\bin\Debug\farmKgk.exe
+C:\Users\kgkkt\Desktop\farmKgk\farmKgk\bin\Debug\farmKgk.pdb
+C:\Users\kgkkt\Desktop\farmKgk\farmKgk\obj\Debug\farmKgk.csprojResolveAssemblyReference.cache
+C:\Users\kgkkt\Desktop\farmKgk\farmKgk\obj\Debug\farmKgk.Form1.resources
+C:\Users\kgkkt\Desktop\farmKgk\farmKgk\obj\Debug\farmKgk.Properties.Resources.resources
+C:\Users\kgkkt\Desktop\farmKgk\farmKgk\obj\Debug\farmKgk.csproj.GenerateResource.Cache
+C:\Users\kgkkt\Desktop\farmKgk - Copy\farmKgk\bin\Debug\farmKgk.exe.config
+C:\Users\kgkkt\Desktop\farmKgk - Copy\farmKgk\obj\Debug\farmKgk.exe
+C:\Users\kgkkt\Desktop\farmKgk - Copy\farmKgk\obj\Debug\farmKgk.pdb
+C:\Users\kgkkt\Desktop\farmKgk - Copy\farmKgk\bin\Debug\farmKgk.exe
+C:\Users\kgkkt\Desktop\farmKgk - Copy\farmKgk\bin\Debug\farmKgk.pdb
+C:\Users\kgkkt\Desktop\farmKgk - Copy\farmKgk\bin\Debug\EntityFramework.dll
+C:\Users\kgkkt\Desktop\farmKgk - Copy\farmKgk\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\kgkkt\Desktop\farmKgk - Copy\farmKgk\bin\Debug\EntityFramework.xml
+C:\Users\kgkkt\Desktop\farmKgk - Copy\farmKgk\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\kgkkt\Desktop\farmKgk - Copy\farmKgk\obj\Debug\farmKgk.csprojResolveAssemblyReference.cache
+C:\Users\kgkkt\Desktop\farmKgk - Copy\farmKgk\obj\Debug\farmKgk.Form1.resources
+C:\Users\kgkkt\Desktop\farmKgk - Copy\farmKgk\obj\Debug\farmKgk.Properties.Resources.resources
+C:\Users\kgkkt\Desktop\farmKgk - Copy\farmKgk\obj\Debug\farmKgk.csproj.GenerateResource.Cache
