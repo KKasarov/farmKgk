@@ -12,13 +12,12 @@ namespace farmKgk
 {
     public partial class Form1 : Form
     {
-        List<Sheep> sheeps = new List<Sheep>();
+       // List<Sheep> sheeps = new List<Sheep>();
         List<Sheep> showOnlySheeps = new List<Sheep>();
         List<string> sheepsStringLs = new List<string>();
         List<Lamb> showOnlyLambs = new List<Lamb>();
 
         List<string> ages = new List<string>();
-        // List<Button> infoForAll = new List<Button>();
 
         internal List<Sheep> ShowAllSheepsNew { get; private set; }
 
@@ -28,16 +27,6 @@ namespace farmKgk
         }
 
         private void tabPage3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
         {
 
         }
@@ -67,7 +56,6 @@ namespace farmKgk
                         if (radioButtonAddSheepMale.Checked)
                         {
                             sexSheep = "Male";
-                            // sexSheep = radioButtonAddSheepMale.Text;
                         }
 
                         Sheep newSheep = new Sheep(TextBoxAddNewSheepSerialNumber.Text, sexSheep, textBoxAddSheepAge.Text, richTextBoxAddSheepInfo.Text);
@@ -93,11 +81,9 @@ namespace farmKgk
         {
             using (var db = new farmDbContext())
             {
-
                 List<Sheep> sheepsForDb = new List<Sheep>();
                 List<string> strSheeps = new List<string>();
                 sheepsForDb.AddRange(db.Sheeps.ToList());
-
 
                 foreach (var sh in sheepsForDb)
                 {
@@ -106,12 +92,7 @@ namespace farmKgk
 
                 richTextBox2.Text = (string.Join("\n", strSheeps));
             }
-        }
-
-        private void tabPage6_Click(object sender, EventArgs e)
-        {
-
-        }
+        }  
 
         private void btnAllSheepsInfo_Click(object sender, EventArgs e)
         {
@@ -140,7 +121,6 @@ namespace farmKgk
                 }
                 else
                 {
-                    //btnShowAllSheeps.Text = $"Show All ({sheeps.Count})";
                     btnShowAllEdit.Visible = true;
                     btnRemoveSheep.Visible = true;
                     //hide labels for sheep info
@@ -148,7 +128,7 @@ namespace farmKgk
                     LabelSortSex.Visible = false;
                     labelShowAllSheepsSN.Visible = false;
                     labelShowAllAgeSheeps.Visible = false;
-                    ;
+                    
 
                     foreach (var sh in db.Sheeps.ToList())
                     {
@@ -164,23 +144,7 @@ namespace farmKgk
 
         private void btnShowAllEdit_Click(object sender, EventArgs e)
         {
-            lblEditThisAnimal.Visible = false;
-            btnEditOk.Visible = true;
-            lblEditSex.Visible = false;
-            radioButtonEditMale.Visible = false;
-            radioButtonEditFamale.Visible = false;
-            labelEditAge.Visible = false;
-            textBoxEditAge.Visible = false;
-            labelEditInfo.Visible = false;
-            richTextBoxEditInfo.Visible = false;
-            btnEditEdit.Visible = false;
-            btnEditBack.Visible = false;
-
-            textBoxEditSN.Location = new Point(215, 148);
-            labelEditId.Location = new Point(91, 147);
-            labelEditId.Text = "Сериен номер:";
-            btnEditOk.Visible = true;
-            lblEditSNInfo.Visible = true;
+            EditAnimalTabStartVisibale();
 
             tabControlFirst.SelectedIndex = 1;
             textBoxEditSN.Text = textBoxAllSheepsSN.Text;
@@ -211,11 +175,6 @@ namespace farmKgk
                     btnAllSheepsAdvView.Text = "Покажи всички >>";
                 }
             }
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void checkBoxAllSheepsAge_CheckedChanged(object sender, EventArgs e)
@@ -268,61 +227,37 @@ namespace farmKgk
             }
         }
 
-        private void radioButtonAllSheepsForCheckBoxSexMale_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButtonAllSheepsForChekBoxSexFemale_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAllSheepsAdvView_Click(object sender, EventArgs e)
         {
+            btnShowAllEdit.Visible = false;
+            btnRemoveSheep.Visible = false;
+
+            LabelSortDate.Visible = true;
+            LabelSortSex.Visible = true;
+            labelShowAllSheepsSN.Visible = true;
+            labelShowAllAgeSheeps.Visible = true;
 
             List<string> showOnlyAge = new List<string>();
             List<Sheep> showOnlySheepsNew = new List<Sheep>();
 
             if (btnAllSheepsAdvView.Text == "Покажи всички >>")
-            {
-                btnShowAllEdit.Visible = false;
-                btnRemoveSheep.Visible = false;
-
-                LabelSortDate.Visible = true;
-                LabelSortSex.Visible = true;
-                labelShowAllSheepsSN.Visible = true;
-                labelShowAllAgeSheeps.Visible = true;
-
+            {              
                 using (var db = new farmDbContext())
                 {
                     List<string> sheepsStr = new List<string>();
 
                     foreach (var sh in db.Sheeps.ToList())
                     {
-                        sheepsStr.Add($"{sh.StringLine()}");
-                        showOnlyAge.Add(sh.Age.ToString());
-                        showOnlySheepsNew.Add(sh);
+                        showListsSheep(showOnlyAge, showOnlySheepsNew, sheepsStr, sh);
                     }
                     ages = showOnlyAge;
                     showOnlySheeps = showOnlySheepsNew;
                     sheepsStr.Reverse();
                     richTextAllSheeps.Text = (string.Join("\n", sheepsStr));
-
                 }
             }
             else
             {
-
-                btnShowAllEdit.Visible = false;
-                btnRemoveSheep.Visible = false;
-
-                //visible labels for all sheeps list!
-                LabelSortDate.Visible = true;
-                LabelSortSex.Visible = true;
-                labelShowAllSheepsSN.Visible = true;
-                labelShowAllAgeSheeps.Visible = true;
-
                 if (checkBoxAllSheepsData.Checked == true
                 && checkBoxAllSheepsAge.Checked == true
                 && checkBoxAllSheepsSex.Checked == true)
@@ -341,9 +276,7 @@ namespace farmKgk
                                     && !a.Sex.Equals("Female"))
                                 .ToList())
                             {
-                                sheepsStr.Add($"{sh.StringLine()}");
-                                showOnlyAge.Add(sh.Age.ToString());
-                                showOnlySheepsNew.Add(sh);
+                                showListsSheep(showOnlyAge, showOnlySheepsNew, sheepsStr, sh);
                             }
                             ages = showOnlyAge;
                             showOnlySheeps = showOnlySheepsNew;
@@ -365,9 +298,7 @@ namespace farmKgk
                                     && a.Sex.Equals("Female"))
                                 .ToList())
                             {
-                                sheepsStr.Add($"{sh.StringLine()}");
-                                showOnlyAge.Add(sh.Age.ToString());
-                                showOnlySheepsNew.Add(sh);
+                                showListsSheep(showOnlyAge, showOnlySheepsNew, sheepsStr, sh);
                             }
                             ages = showOnlyAge;
                             showOnlySheeps = showOnlySheepsNew;
@@ -391,9 +322,7 @@ namespace farmKgk
                                 && a.Age.Equals(textBoxAllSheepsForCheckBoxAge.Text.ToString()))
                             .ToList())
                         {
-                            sheepsStr.Add($"{sh.StringLine()}");
-                            showOnlyAge.Add(sh.Age.ToString());
-                            showOnlySheepsNew.Add(sh);
+                            showListsSheep(showOnlyAge, showOnlySheepsNew, sheepsStr, sh);
                         }
                         ages = showOnlyAge;
                         showOnlySheeps = showOnlySheepsNew;
@@ -418,9 +347,7 @@ namespace farmKgk
                                     && !a.Sex.Equals("Female"))
                                 .ToList())
                             {
-                                sheepsStr.Add($"{sh.StringLine()}");
-                                showOnlyAge.Add(sh.Age.ToString());
-                                showOnlySheepsNew.Add(sh);
+                                showListsSheep(showOnlyAge, showOnlySheepsNew, sheepsStr, sh);
                             }
                             ages = showOnlyAge;
                             showOnlySheeps = showOnlySheepsNew;
@@ -442,9 +369,7 @@ namespace farmKgk
                                     && a.Sex.Equals("Female"))
                                 .ToList())
                             {
-                                sheepsStr.Add($"{sh.StringLine()}");
-                                showOnlyAge.Add(sh.Age.ToString());
-                                showOnlySheepsNew.Add(sh);
+                                showListsSheep(showOnlyAge, showOnlySheepsNew, sheepsStr, sh);
                             }
                             ages = showOnlyAge;
                             showOnlySheeps = showOnlySheepsNew;
@@ -466,9 +391,7 @@ namespace farmKgk
                             .Where(a => a.Date.Equals(dateTimePickerForCheckBoxData.Text.ToString()))
                             .ToList())
                         {
-                            sheepsStr.Add($"{sh.StringLine()}");
-                            showOnlyAge.Add(sh.Age.ToString());
-                            showOnlySheepsNew.Add(sh);
+                            showListsSheep(showOnlyAge, showOnlySheepsNew, sheepsStr, sh);
                         }
                         ages = showOnlyAge;
                         showOnlySheeps = showOnlySheepsNew;
@@ -494,9 +417,7 @@ namespace farmKgk
                                     && !a.Sex.Equals("Female"))
                                 .ToList())
                             {
-                                sheepsStr.Add($"{sh.StringLine()}");
-                                showOnlyAge.Add(sh.Age.ToString());
-                                showOnlySheepsNew.Add(sh);
+                                showListsSheep(showOnlyAge, showOnlySheepsNew, sheepsStr, sh);
                             }
                             ages = showOnlyAge;
                             showOnlySheeps = showOnlySheepsNew;
@@ -518,9 +439,7 @@ namespace farmKgk
                                     && a.Sex.Equals("Female"))
                                 .ToList())
                             {
-                                sheepsStr.Add($"{sh.StringLine()}");
-                                showOnlyAge.Add(sh.Age.ToString());
-                                showOnlySheepsNew.Add(sh);
+                                showListsSheep(showOnlyAge, showOnlySheepsNew, sheepsStr, sh);
                             }
                             ages = showOnlyAge;
                             showOnlySheeps = showOnlySheepsNew;
@@ -544,9 +463,7 @@ namespace farmKgk
                             .Where(a => a.Age.Equals(textBoxAllSheepsForCheckBoxAge.Text.ToString()))
                             .ToList())
                         {
-                            sheepsStr.Add($"{sh.StringLine()}");
-                            showOnlyAge.Add(sh.Age.ToString());
-                            showOnlySheepsNew.Add(sh);
+                            showListsSheep(showOnlyAge, showOnlySheepsNew, sheepsStr, sh);
                         }
                         ages = showOnlyAge;
                         showOnlySheeps = showOnlySheepsNew;
@@ -570,9 +487,7 @@ namespace farmKgk
                                 .Where(a => !a.Sex.Equals("Female"))
                                 .ToList())
                             {
-                                sheepsStr.Add($"{sh.StringLine()}");
-                                showOnlyAge.Add(sh.Age.ToString());
-                                showOnlySheepsNew.Add(sh);
+                                showListsSheep(showOnlyAge, showOnlySheepsNew, sheepsStr, sh);
                             }
                             ages = showOnlyAge;
                             showOnlySheeps = showOnlySheepsNew;
@@ -593,9 +508,7 @@ namespace farmKgk
                                 .Where(a => a.Sex.Equals("Female"))
                                 .ToList())
                             {
-                                sheepsStr.Add($"{sh.StringLine()}");
-                                showOnlyAge.Add(sh.Age.ToString());
-                                showOnlySheepsNew.Add(sh);
+                                showListsSheep(showOnlyAge, showOnlySheepsNew, sheepsStr, sh);
                             }
                             ages = showOnlyAge;
                             showOnlySheeps = showOnlySheepsNew;
@@ -610,9 +523,11 @@ namespace farmKgk
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private static void showListsSheep(List<string> showOnlyAge, List<Sheep> showOnlySheepsNew, List<string> sheepsStr, Sheep sh)
         {
-
+            sheepsStr.Add($"{sh.StringLine()}");
+            showOnlyAge.Add(sh.Age.ToString());
+            showOnlySheepsNew.Add(sh);
         }
 
         private void LabelSortDate_Click(object sender, EventArgs e)
@@ -630,8 +545,6 @@ namespace farmKgk
 
         private void labelShowAllAgeSheeps_Click_1(object sender, EventArgs e)
         {
-
-
             List<string> sheepsOnlyStringLs = new List<string>();
 
             ages.Sort();
@@ -693,24 +606,8 @@ namespace farmKgk
                     if (db.Lambs.Select(a => a.SerialNumber).Contains(textBoxEditSN.Text))
                     {
                         lblEditThisAnimal.Text = "Агне";
-                        lblEditThisAnimal.Visible = true;
 
-                        btnEditOk.Visible = false;
-                        lblEditSex.Visible = true;
-                        radioButtonEditMale.Visible = true;
-                        radioButtonEditFamale.Visible = true;
-                        labelEditAge.Visible = true;
-                        textBoxEditAge.Visible = true;
-                        labelEditInfo.Visible = true;
-                        richTextBoxEditInfo.Visible = true;
-                        btnEditEdit.Visible = true;
-                        btnEditBack.Visible = true;
-
-                        lblEditSNInfo.Visible = false;
-                        textBoxEditSN.Location = new Point(108, 83);
-                        textBoxEditSN.Width = 167;
-                        labelEditId.Location = new Point(68, 83);
-                        labelEditId.Text = "С/н:";
+                        EditOkBtnVisible();
 
                         var lb = db.Lambs.First(a => a.SerialNumber.Equals(textBoxEditSN.Text));
 
@@ -744,24 +641,8 @@ namespace farmKgk
                 else
                 {
                     lblEditThisAnimal.Text = "Овца";
-                    lblEditThisAnimal.Visible = true;
 
-                    btnEditOk.Visible = false;
-                    //labelEditParent.Visible = true;
-                    //textBoxEditParent.Visible = true;
-                    radioButtonEditMale.Visible = true;
-                    radioButtonEditFamale.Visible = true;
-                    labelEditAge.Visible = true;
-                    textBoxEditAge.Visible = true;
-                    labelEditInfo.Visible = true;
-                    richTextBoxEditInfo.Visible = true;
-                    btnEditEdit.Visible = true;
-                    btnEditBack.Visible = true;
-
-                    lblEditSNInfo.Visible = false;
-                    textBoxEditSN.Location = new Point(108, 83);
-                    labelEditId.Location = new Point(68, 83);
-                    labelEditId.Text = "С/н:";
+                    EditOkBtnVisible();
 
                     var sh = db.Sheeps.First(a => a.SerialNumber.Equals(textBoxEditSN.Text));
 
@@ -781,25 +662,30 @@ namespace farmKgk
             }
         }
 
+        private void EditOkBtnVisible()
+        {
+            lblEditThisAnimal.Visible = true;
+            btnEditOk.Visible = false;
+            lblEditSex.Visible = true;
+            radioButtonEditMale.Visible = true;
+            radioButtonEditFamale.Visible = true;
+            labelEditAge.Visible = true;
+            textBoxEditAge.Visible = true;
+            labelEditInfo.Visible = true;
+            richTextBoxEditInfo.Visible = true;
+            btnEditEdit.Visible = true;
+            btnEditBack.Visible = true;
+
+            lblEditSNInfo.Visible = false;
+            textBoxEditSN.Location = new Point(108, 83);
+            textBoxEditSN.Width = 167;
+            labelEditId.Location = new Point(68, 83);
+            labelEditId.Text = "С/н:";
+        }
+
         private void btnEditEdit_Click(object sender, EventArgs e)
         {
-            lblEditThisAnimal.Visible = false; 
-            btnEditOk.Visible = true;
-            lblEditSex.Visible = false;
-            radioButtonEditMale.Visible = false;
-            radioButtonEditFamale.Visible = false;
-            labelEditAge.Visible = false;
-            textBoxEditAge.Visible = false;
-            labelEditInfo.Visible = false;
-            richTextBoxEditInfo.Visible = false;
-            btnEditEdit.Visible = false;
-            btnEditBack.Visible = false;
-            labelEditId.Text = "Сериен номер:";
-
-            textBoxEditSN.Location = new Point(215, 148);
-            labelEditId.Location = new Point(91, 147);
-            btnEditOk.Visible = true;
-            lblEditSNInfo.Visible = true;
+            EditAnimalTabStartVisibale();
 
             using (farmDbContext db = new farmDbContext())
             {
@@ -812,7 +698,6 @@ namespace farmKgk
                     {
                         sh.Age = textBoxEditAge.Text;
                         sh.Info = richTextBoxEditInfo.Text;
-
                     }
 
                     if (radioButtonEditFamale.Checked == true)
@@ -839,7 +724,6 @@ namespace farmKgk
                     {
                         lmb.Age = textBoxEditAge.Text;
                         lmb.Info = richTextBoxEditInfo.Text;
-
                     }
 
                     if (radioButtonEditFamale.Checked == true)
@@ -862,7 +746,11 @@ namespace farmKgk
 
         private void btnEditBack_Click(object sender, EventArgs e)
         {
+            EditAnimalTabStartVisibale();
+        }
 
+        private void EditAnimalTabStartVisibale()
+        {
             lblEditThisAnimal.Visible = false;
             btnEditOk.Visible = true;
             lblEditSex.Visible = false;
@@ -924,36 +812,33 @@ namespace farmKgk
                 else
                 {
                     var mbox = MessageBox.Show($"Вече има животно с сериен номер: {txtAddNewLambSN.Text}",
-                        "Неуспешно добавяне!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    
+                        "Неуспешно добавяне!", MessageBoxButtons.OK, MessageBoxIcon.Stop);                   
                 }
             }
         }
 
         private void btnShowAllAdvViewLambs_Click(object sender, EventArgs e)
-        {
+        {            
+            btnRemoveLamb.Visible = false;
+            btnShowAllLambsEdit.Visible = false;
+
+            lblShowAllLambsSortData.Visible = true;
+            lblShowAllLambsSortSex.Visible = true;
+            lblShowAllLambsSortSN.Visible = true;
+            lblShowAllLambsSortAge.Visible = true;
+
             List<string> showOnlyAge = new List<string>();
             List<Lamb> showOnlySheepsNew = new List<Lamb>();
 
             if (btnShowAllAdvViewLambs.Text == "Покажи всички >>")
             {
-                btnShowAllLambsEdit.Visible = false;
-                btnRemoveLamb.Visible = false;
-                //visible labels for all sheeps list!
-                lblShowAllLambsSortData.Visible = true;
-                lblShowAllLambsSortSex.Visible = true;
-                lblShowAllLambsSortSN.Visible = true;
-                lblShowAllLambsSortAge.Visible = true;
-
                 using (var db = new farmDbContext())
                 {
                     List<string> sheepsStr = new List<string>();
 
                     foreach (var sh in db.Lambs.ToList())
                     {
-                        sheepsStr.Add($"{sh.StringLine()}");
-                        showOnlyAge.Add(sh.Age.ToString());
-                        showOnlySheepsNew.Add(sh);
+                        showListsLamb(showOnlyAge, showOnlySheepsNew, sheepsStr, sh);
                     }
                     ages = showOnlyAge;
                     showOnlyLambs = showOnlySheepsNew;
@@ -962,15 +847,7 @@ namespace farmKgk
                 }
             }
             else
-            {
-                btnRemoveLamb.Visible = false;
-                btnShowAllLambsEdit.Visible = false;
-
-                lblShowAllLambsSortData.Visible = true;
-                lblShowAllLambsSortSex.Visible = true;
-                lblShowAllLambsSortSN.Visible = true;
-                lblShowAllLambsSortAge.Visible = true;
-
+            {               
                 if (chBShowLambsData.Checked == true
                && chBShowLambsAge.Checked == true
                && chBShowLambsSex.Checked == true)
@@ -989,9 +866,7 @@ namespace farmKgk
                                     && !a.Sex.Equals("Female"))
                                 .ToList())
                             {
-                                sheepsStr.Add($"{sh.StringLine()}");
-                                showOnlyAge.Add(sh.Age.ToString());
-                                showOnlySheepsNew.Add(sh);
+                                showListsLamb(showOnlyAge, showOnlySheepsNew, sheepsStr, sh);
                             }
                             ages = showOnlyAge;
                             showOnlyLambs = showOnlySheepsNew;
@@ -1013,9 +888,7 @@ namespace farmKgk
                                     && a.Sex.Equals("Female"))
                                 .ToList())
                             {
-                                sheepsStr.Add($"{sh.StringLine()}");
-                                showOnlyAge.Add(sh.Age.ToString());
-                                showOnlySheepsNew.Add(sh);
+                                showListsLamb(showOnlyAge, showOnlySheepsNew, sheepsStr, sh);
                             }
                             ages = showOnlyAge;
                             showOnlyLambs = showOnlySheepsNew;
@@ -1037,9 +910,7 @@ namespace farmKgk
                                 && a.Age.Equals(txtShowAllLambsAge.Text.ToString()))
                             .ToList())
                         {
-                            sheepsStr.Add($"{sh.StringLine()}");
-                            showOnlyAge.Add(sh.Age.ToString());
-                            showOnlySheepsNew.Add(sh);
+                            showListsLamb(showOnlyAge, showOnlySheepsNew, sheepsStr, sh);
                         }
                         ages = showOnlyAge;
                         showOnlyLambs = showOnlySheepsNew;
@@ -1064,9 +935,7 @@ namespace farmKgk
                                     && !a.Sex.Equals("Female"))
                                 .ToList())
                             {
-                                sheepsStr.Add($"{sh.StringLine()}");
-                                showOnlyAge.Add(sh.Age.ToString());
-                                showOnlySheepsNew.Add(sh);
+                                showListsLamb(showOnlyAge, showOnlySheepsNew, sheepsStr, sh);
                             }
 
                             ages = showOnlyAge;
@@ -1089,9 +958,7 @@ namespace farmKgk
                                     && a.Sex.Equals("Female"))
                                 .ToList())
                             {
-                                sheepsStr.Add($"{sh.StringLine()}");
-                                showOnlyAge.Add(sh.Age.ToString());
-                                showOnlySheepsNew.Add(sh);
+                                showListsLamb(showOnlyAge, showOnlySheepsNew, sheepsStr, sh);
                             }
                             ages = showOnlyAge;
                             showOnlyLambs = showOnlySheepsNew;
@@ -1113,9 +980,7 @@ namespace farmKgk
                             .Where(a => a.Date.Equals(dateTimePickerShowAllLambs.Text.ToString()))
                             .ToList())
                         {
-                            sheepsStr.Add($"{sh.StringLine()}");
-                            showOnlyAge.Add(sh.Age.ToString());
-                            showOnlySheepsNew.Add(sh);
+                            showListsLamb(showOnlyAge, showOnlySheepsNew, sheepsStr, sh);
                         }
                         ages = showOnlyAge;
                         showOnlyLambs = showOnlySheepsNew;
@@ -1141,9 +1006,7 @@ namespace farmKgk
                                     && !a.Sex.Equals("Female"))
                                 .ToList())
                             {
-                                sheepsStr.Add($"{sh.StringLine()}");
-                                showOnlyAge.Add(sh.Age.ToString());
-                                showOnlySheepsNew.Add(sh);
+                                showListsLamb(showOnlyAge, showOnlySheepsNew, sheepsStr, sh);
                             }
                             ages = showOnlyAge;
                             showOnlyLambs = showOnlySheepsNew;
@@ -1165,9 +1028,7 @@ namespace farmKgk
                                     && a.Sex.Equals("Female"))
                                 .ToList())
                             {
-                                sheepsStr.Add($"{sh.StringLine()}");
-                                showOnlyAge.Add(sh.Age.ToString());
-                                showOnlySheepsNew.Add(sh);
+                                showListsLamb(showOnlyAge, showOnlySheepsNew, sheepsStr, sh);
                             }
                             ages = showOnlyAge;
                             showOnlyLambs = showOnlySheepsNew;
@@ -1191,9 +1052,7 @@ namespace farmKgk
                             .Where(a => a.Age.Equals(txtShowAllLambsAge.Text.ToString()))
                             .ToList())
                         {
-                            sheepsStr.Add($"{sh.StringLine()}");
-                            showOnlyAge.Add(sh.Age.ToString());
-                            showOnlySheepsNew.Add(sh);
+                            showListsLamb(showOnlyAge, showOnlySheepsNew, sheepsStr, sh);
                         }
                         ages = showOnlyAge;
                         showOnlyLambs = showOnlySheepsNew;
@@ -1217,9 +1076,7 @@ namespace farmKgk
                                 .Where(a => !a.Sex.Equals("Female"))
                                 .ToList())
                             {
-                                sheepsStr.Add($"{sh.StringLine()}");
-                                showOnlyAge.Add(sh.Age.ToString());
-                                showOnlySheepsNew.Add(sh);
+                                showListsLamb(showOnlyAge, showOnlySheepsNew, sheepsStr, sh);
                             }
                             ages = showOnlyAge;
                             showOnlyLambs = showOnlySheepsNew;
@@ -1240,9 +1097,7 @@ namespace farmKgk
                                 .Where(a => a.Sex.Equals("Female"))
                                 .ToList())
                             {
-                                sheepsStr.Add($"{sh.StringLine()}");
-                                showOnlyAge.Add(sh.Age.ToString());
-                                showOnlySheepsNew.Add(sh);
+                                showListsLamb(showOnlyAge, showOnlySheepsNew, sheepsStr, sh);
                             }
                             ages = showOnlyAge;
                             showOnlyLambs = showOnlySheepsNew;
@@ -1253,6 +1108,13 @@ namespace farmKgk
                     }
                 }
             }
+        }
+
+        private static void showListsLamb(List<string> showOnlyAge, List<Lamb> showOnlySheepsNew, List<string> sheepsStr, Lamb sh)
+        {
+            sheepsStr.Add($"{sh.StringLine()}");
+            showOnlyAge.Add(sh.Age.ToString());
+            showOnlySheepsNew.Add(sh);
         }
 
         private void chBShowLambsData_CheckedChanged(object sender, EventArgs e)

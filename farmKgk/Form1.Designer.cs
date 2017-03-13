@@ -47,9 +47,11 @@
             this.richTextBoxAddSheepInfo = new System.Windows.Forms.RichTextBox();
             this.btnAddNewSheep = new System.Windows.Forms.Button();
             this.TextBoxAddNewSheepSerialNumber = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.label7 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.txtAddNewLambAge = new System.Windows.Forms.TextBox();
             this.rBAddNewLambFemale = new System.Windows.Forms.RadioButton();
@@ -62,8 +64,11 @@
             this.label16 = new System.Windows.Forms.Label();
             this.TabEdit = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblEditSex = new System.Windows.Forms.Label();
+            this.lblEditThisAnimal = new System.Windows.Forms.Label();
             this.btnEditBack = new System.Windows.Forms.Button();
             this.btnEditOk = new System.Windows.Forms.Button();
+            this.lblEditSNInfo = new System.Windows.Forms.Label();
             this.labelEditAge = new System.Windows.Forms.Label();
             this.textBoxEditAge = new System.Windows.Forms.TextBox();
             this.radioButtonEditFamale = new System.Windows.Forms.RadioButton();
@@ -77,6 +82,7 @@
             this.tabShowAll = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnRemoveSheep = new System.Windows.Forms.Button();
             this.btnAllSheepsRevers = new System.Windows.Forms.Button();
             this.LabelSortSex = new System.Windows.Forms.Label();
             this.labelShowAllAgeSheeps = new System.Windows.Forms.Label();
@@ -100,9 +106,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.btnAllSheepsInfo = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRemoveLamb = new System.Windows.Forms.Button();
             this.btnShowAllLambsRevers = new System.Windows.Forms.Button();
             this.lblShowAllLambsSortSex = new System.Windows.Forms.Label();
             this.lblShowAllLambsSortAge = new System.Windows.Forms.Label();
@@ -125,13 +129,9 @@
             this.rTextShowAllLambs = new System.Windows.Forms.RichTextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.btnShowAllLamsInfo = new System.Windows.Forms.Button();
-            this.btnRemoveSheep = new System.Windows.Forms.Button();
-            this.lblEditSNInfo = new System.Windows.Forms.Label();
-            this.btnRemoveLamb = new System.Windows.Forms.Button();
-            this.lblEditThisAnimal = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblEditSex = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControlFirst.SuspendLayout();
             this.TabPAddNew.SuspendLayout();
@@ -145,8 +145,8 @@
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabPage5.SuspendLayout();
-            this.tabPage4.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -341,6 +341,18 @@
             this.TextBoxAddNewSheepSerialNumber.Size = new System.Drawing.Size(190, 20);
             this.TextBoxAddNewSheepSerialNumber.TabIndex = 2;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.label5.Location = new System.Drawing.Point(61, 114);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(41, 18);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Пол:";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -385,7 +397,18 @@
             this.tabPage6.Size = new System.Drawing.Size(638, 369);
             this.tabPage6.TabIndex = 1;
             this.tabPage6.Text = "Агне";
-            this.tabPage6.Click += new System.EventHandler(this.tabPage6_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.label7.Location = new System.Drawing.Point(61, 114);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(41, 18);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "Пол:";
             // 
             // label13
             // 
@@ -533,6 +556,31 @@
             this.panel1.Size = new System.Drawing.Size(633, 365);
             this.panel1.TabIndex = 0;
             // 
+            // lblEditSex
+            // 
+            this.lblEditSex.AutoSize = true;
+            this.lblEditSex.BackColor = System.Drawing.Color.Transparent;
+            this.lblEditSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblEditSex.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.lblEditSex.Location = new System.Drawing.Point(61, 116);
+            this.lblEditSex.Name = "lblEditSex";
+            this.lblEditSex.Size = new System.Drawing.Size(41, 18);
+            this.lblEditSex.TabIndex = 31;
+            this.lblEditSex.Text = "Пол:";
+            this.lblEditSex.Visible = false;
+            // 
+            // lblEditThisAnimal
+            // 
+            this.lblEditThisAnimal.AutoSize = true;
+            this.lblEditThisAnimal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblEditThisAnimal.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblEditThisAnimal.Location = new System.Drawing.Point(281, 81);
+            this.lblEditThisAnimal.Name = "lblEditThisAnimal";
+            this.lblEditThisAnimal.Size = new System.Drawing.Size(52, 20);
+            this.lblEditThisAnimal.TabIndex = 30;
+            this.lblEditThisAnimal.Text = "Овца";
+            this.lblEditThisAnimal.Visible = false;
+            // 
             // btnEditBack
             // 
             this.btnEditBack.BackColor = System.Drawing.Color.LavenderBlush;
@@ -558,6 +606,18 @@
             this.btnEditOk.Text = "OK";
             this.btnEditOk.UseVisualStyleBackColor = false;
             this.btnEditOk.Click += new System.EventHandler(this.btnEditOk_Click);
+            // 
+            // lblEditSNInfo
+            // 
+            this.lblEditSNInfo.AutoSize = true;
+            this.lblEditSNInfo.BackColor = System.Drawing.Color.Transparent;
+            this.lblEditSNInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblEditSNInfo.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.lblEditSNInfo.Location = new System.Drawing.Point(98, 105);
+            this.lblEditSNInfo.Name = "lblEditSNInfo";
+            this.lblEditSNInfo.Size = new System.Drawing.Size(340, 36);
+            this.lblEditSNInfo.TabIndex = 25;
+            this.lblEditSNInfo.Text = "Въведете серииния номер на животното, което\r\n    искате да редактирате!";
             // 
             // labelEditAge
             // 
@@ -617,7 +677,6 @@
             this.label6.Size = new System.Drawing.Size(319, 29);
             this.label6.TabIndex = 16;
             this.label6.Text = "Редактирай животно.";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // richTextBoxEditInfo
             // 
@@ -729,6 +788,17 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Овце";
             // 
+            // btnRemoveSheep
+            // 
+            this.btnRemoveSheep.Location = new System.Drawing.Point(521, 61);
+            this.btnRemoveSheep.Name = "btnRemoveSheep";
+            this.btnRemoveSheep.Size = new System.Drawing.Size(85, 23);
+            this.btnRemoveSheep.TabIndex = 25;
+            this.btnRemoveSheep.Text = "Изтрий";
+            this.btnRemoveSheep.UseVisualStyleBackColor = true;
+            this.btnRemoveSheep.Visible = false;
+            this.btnRemoveSheep.Click += new System.EventHandler(this.btnRemoveSheep_Click);
+            // 
             // btnAllSheepsRevers
             // 
             this.btnAllSheepsRevers.BackColor = System.Drawing.Color.LavenderBlush;
@@ -806,7 +876,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(288, 175);
             this.panel2.TabIndex = 18;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // btnAllSheepsAdvView
             // 
@@ -846,7 +915,6 @@
             this.radioButtonAllSheepsForChekBoxSexFemale.TabStop = true;
             this.radioButtonAllSheepsForChekBoxSexFemale.Text = "Female";
             this.radioButtonAllSheepsForChekBoxSexFemale.UseVisualStyleBackColor = true;
-            this.radioButtonAllSheepsForChekBoxSexFemale.CheckedChanged += new System.EventHandler(this.radioButtonAllSheepsForChekBoxSexFemale_CheckedChanged);
             // 
             // radioButtonAllSheepsForCheckBoxSexMale
             // 
@@ -859,7 +927,6 @@
             this.radioButtonAllSheepsForCheckBoxSexMale.TabIndex = 5;
             this.radioButtonAllSheepsForCheckBoxSexMale.Text = "Male";
             this.radioButtonAllSheepsForCheckBoxSexMale.UseVisualStyleBackColor = true;
-            this.radioButtonAllSheepsForCheckBoxSexMale.CheckedChanged += new System.EventHandler(this.radioButtonAllSheepsForCheckBoxSexMale_CheckedChanged);
             // 
             // textBoxAllSheepsForCheckBoxAge
             // 
@@ -942,7 +1009,6 @@
             this.label9.Size = new System.Drawing.Size(37, 20);
             this.label9.TabIndex = 8;
             this.label9.Text = "С/н:";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // textBoxAllSheepsSN
             // 
@@ -1031,36 +1097,16 @@
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Агнета";
             // 
-            // tabPage4
+            // btnRemoveLamb
             // 
-            this.tabPage4.Controls.Add(this.richTextBox2);
-            this.tabPage4.Controls.Add(this.button1);
-            this.tabPage4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(643, 405);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "tabPage4";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.Location = new System.Drawing.Point(114, 17);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(351, 286);
-            this.richTextBox2.TabIndex = 2;
-            this.richTextBox2.Text = "";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(187, 345);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnRemoveLamb.Location = new System.Drawing.Point(521, 61);
+            this.btnRemoveLamb.Name = "btnRemoveLamb";
+            this.btnRemoveLamb.Size = new System.Drawing.Size(85, 23);
+            this.btnRemoveLamb.TabIndex = 39;
+            this.btnRemoveLamb.Text = "Изтрий";
+            this.btnRemoveLamb.UseVisualStyleBackColor = true;
+            this.btnRemoveLamb.Visible = false;
+            this.btnRemoveLamb.Click += new System.EventHandler(this.btnRemoveLamb_Click);
             // 
             // btnShowAllLambsRevers
             // 
@@ -1333,88 +1379,36 @@
             this.btnShowAllLamsInfo.UseVisualStyleBackColor = false;
             this.btnShowAllLamsInfo.Click += new System.EventHandler(this.btnShowAllLamsInfo_Click);
             // 
-            // btnRemoveSheep
+            // tabPage4
             // 
-            this.btnRemoveSheep.Location = new System.Drawing.Point(521, 61);
-            this.btnRemoveSheep.Name = "btnRemoveSheep";
-            this.btnRemoveSheep.Size = new System.Drawing.Size(85, 23);
-            this.btnRemoveSheep.TabIndex = 25;
-            this.btnRemoveSheep.Text = "Изтрий";
-            this.btnRemoveSheep.UseVisualStyleBackColor = true;
-            this.btnRemoveSheep.Visible = false;
-            this.btnRemoveSheep.Click += new System.EventHandler(this.btnRemoveSheep_Click);
+            this.tabPage4.Controls.Add(this.richTextBox2);
+            this.tabPage4.Controls.Add(this.button1);
+            this.tabPage4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(643, 405);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // lblEditSNInfo
+            // richTextBox2
             // 
-            this.lblEditSNInfo.AutoSize = true;
-            this.lblEditSNInfo.BackColor = System.Drawing.Color.Transparent;
-            this.lblEditSNInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblEditSNInfo.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.lblEditSNInfo.Location = new System.Drawing.Point(98, 105);
-            this.lblEditSNInfo.Name = "lblEditSNInfo";
-            this.lblEditSNInfo.Size = new System.Drawing.Size(340, 36);
-            this.lblEditSNInfo.TabIndex = 25;
-            this.lblEditSNInfo.Text = "Въведете серииния номер на животното, което\r\n    искате да редактирате!";
+            this.richTextBox2.Location = new System.Drawing.Point(114, 17);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(351, 286);
+            this.richTextBox2.TabIndex = 2;
+            this.richTextBox2.Text = "";
             // 
-            // btnRemoveLamb
+            // button1
             // 
-            this.btnRemoveLamb.Location = new System.Drawing.Point(521, 61);
-            this.btnRemoveLamb.Name = "btnRemoveLamb";
-            this.btnRemoveLamb.Size = new System.Drawing.Size(85, 23);
-            this.btnRemoveLamb.TabIndex = 39;
-            this.btnRemoveLamb.Text = "Изтрий";
-            this.btnRemoveLamb.UseVisualStyleBackColor = true;
-            this.btnRemoveLamb.Visible = false;
-            this.btnRemoveLamb.Click += new System.EventHandler(this.btnRemoveLamb_Click);
-            // 
-            // lblEditThisAnimal
-            // 
-            this.lblEditThisAnimal.AutoSize = true;
-            this.lblEditThisAnimal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblEditThisAnimal.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblEditThisAnimal.Location = new System.Drawing.Point(281, 81);
-            this.lblEditThisAnimal.Name = "lblEditThisAnimal";
-            this.lblEditThisAnimal.Size = new System.Drawing.Size(52, 20);
-            this.lblEditThisAnimal.TabIndex = 30;
-            this.lblEditThisAnimal.Text = "Овца";
-            this.lblEditThisAnimal.Visible = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label5.Location = new System.Drawing.Point(61, 114);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 18);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Пол:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label7.Location = new System.Drawing.Point(61, 114);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 18);
-            this.label7.TabIndex = 23;
-            this.label7.Text = "Пол:";
-            // 
-            // lblEditSex
-            // 
-            this.lblEditSex.AutoSize = true;
-            this.lblEditSex.BackColor = System.Drawing.Color.Transparent;
-            this.lblEditSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblEditSex.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.lblEditSex.Location = new System.Drawing.Point(61, 116);
-            this.lblEditSex.Name = "lblEditSex";
-            this.lblEditSex.Size = new System.Drawing.Size(41, 18);
-            this.lblEditSex.TabIndex = 31;
-            this.lblEditSex.Text = "Пол:";
-            this.lblEditSex.Visible = false;
+            this.button1.Location = new System.Drawing.Point(187, 345);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -1451,9 +1445,9 @@
             this.panel2.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
