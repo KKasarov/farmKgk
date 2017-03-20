@@ -31,14 +31,28 @@ namespace farmKgk
 
         public string StringLine()
         {
-            if (this.Sex == "Female")
+            if (Age.Length == 1)
             {
-                return $"{this.Date}          {this.Age}          {this.Sex}          {this.SerialNumber}";
+                if (this.Sex == "Female")
+                {
+                    return $"{this.Date}          {this.Age}          {this.Sex}          {this.SerialNumber}";
+                }
+                else
+                {
+                    return $"{this.Date}          {this.Age}          {this.Sex}               {this.SerialNumber}";
+                }
             }
             else
             {
-                return $"{this.Date}          {this.Age}          {this.Sex}               {this.SerialNumber}";
-            }            
+                if (this.Sex == "Female")
+                {
+                    return $"{this.Date}          {this.Age}        {this.Sex}          {this.SerialNumber}";
+                }
+                else
+                {
+                    return $"{this.Date}          {this.Age}        {this.Sex}               {this.SerialNumber}";
+                }
+            }          
         }
     }
 }

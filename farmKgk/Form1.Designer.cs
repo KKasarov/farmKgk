@@ -129,9 +129,6 @@
             this.rTextShowAllLambs = new System.Windows.Forms.RichTextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.btnShowAllLamsInfo = new System.Windows.Forms.Button();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControlFirst.SuspendLayout();
             this.TabPAddNew.SuspendLayout();
@@ -146,7 +143,6 @@
             this.panel2.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -199,11 +195,10 @@
             this.tabControlFirst.Controls.Add(this.TabPAddNew);
             this.tabControlFirst.Controls.Add(this.TabEdit);
             this.tabControlFirst.Controls.Add(this.tabShowAll);
-            this.tabControlFirst.Controls.Add(this.tabPage4);
             this.tabControlFirst.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tabControlFirst.Location = new System.Drawing.Point(0, 27);
             this.tabControlFirst.Name = "tabControlFirst";
-            this.tabControlFirst.Padding = new System.Drawing.Point(39, 3);
+            this.tabControlFirst.Padding = new System.Drawing.Point(63, 3);
             this.tabControlFirst.SelectedIndex = 0;
             this.tabControlFirst.Size = new System.Drawing.Size(651, 434);
             this.tabControlFirst.TabIndex = 1;
@@ -416,11 +411,11 @@
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label13.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label13.Location = new System.Drawing.Point(261, 115);
+            this.label13.Location = new System.Drawing.Point(259, 115);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(63, 18);
+            this.label13.Size = new System.Drawing.Size(65, 18);
             this.label13.TabIndex = 20;
-            this.label13.Text = "Години:";
+            this.label13.Text = "Месеци:";
             // 
             // txtAddNewLambAge
             // 
@@ -613,7 +608,7 @@
             this.lblEditSNInfo.BackColor = System.Drawing.Color.Transparent;
             this.lblEditSNInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblEditSNInfo.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.lblEditSNInfo.Location = new System.Drawing.Point(98, 105);
+            this.lblEditSNInfo.Location = new System.Drawing.Point(105, 109);
             this.lblEditSNInfo.Name = "lblEditSNInfo";
             this.lblEditSNInfo.Size = new System.Drawing.Size(340, 36);
             this.lblEditSNInfo.TabIndex = 25;
@@ -625,7 +620,7 @@
             this.labelEditAge.BackColor = System.Drawing.Color.Transparent;
             this.labelEditAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelEditAge.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.labelEditAge.Location = new System.Drawing.Point(261, 117);
+            this.labelEditAge.Location = new System.Drawing.Point(260, 117);
             this.labelEditAge.Name = "labelEditAge";
             this.labelEditAge.Size = new System.Drawing.Size(63, 18);
             this.labelEditAge.TabIndex = 25;
@@ -881,9 +876,9 @@
             // 
             this.btnAllSheepsAdvView.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnAllSheepsAdvView.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAllSheepsAdvView.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAllSheepsAdvView.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAllSheepsAdvView.ForeColor = System.Drawing.Color.Black;
-            this.btnAllSheepsAdvView.Location = new System.Drawing.Point(104, 109);
+            this.btnAllSheepsAdvView.Location = new System.Drawing.Point(104, 99);
             this.btnAllSheepsAdvView.Name = "btnAllSheepsAdvView";
             this.btnAllSheepsAdvView.Size = new System.Drawing.Size(127, 25);
             this.btnAllSheepsAdvView.TabIndex = 20;
@@ -908,7 +903,7 @@
             this.radioButtonAllSheepsForChekBoxSexFemale.Checked = true;
             this.radioButtonAllSheepsForChekBoxSexFemale.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioButtonAllSheepsForChekBoxSexFemale.Enabled = false;
-            this.radioButtonAllSheepsForChekBoxSexFemale.Location = new System.Drawing.Point(165, 75);
+            this.radioButtonAllSheepsForChekBoxSexFemale.Location = new System.Drawing.Point(165, 71);
             this.radioButtonAllSheepsForChekBoxSexFemale.Name = "radioButtonAllSheepsForChekBoxSexFemale";
             this.radioButtonAllSheepsForChekBoxSexFemale.Size = new System.Drawing.Size(67, 19);
             this.radioButtonAllSheepsForChekBoxSexFemale.TabIndex = 6;
@@ -921,7 +916,7 @@
             this.radioButtonAllSheepsForCheckBoxSexMale.AutoSize = true;
             this.radioButtonAllSheepsForCheckBoxSexMale.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioButtonAllSheepsForCheckBoxSexMale.Enabled = false;
-            this.radioButtonAllSheepsForCheckBoxSexMale.Location = new System.Drawing.Point(92, 75);
+            this.radioButtonAllSheepsForCheckBoxSexMale.Location = new System.Drawing.Point(92, 71);
             this.radioButtonAllSheepsForCheckBoxSexMale.Name = "radioButtonAllSheepsForCheckBoxSexMale";
             this.radioButtonAllSheepsForCheckBoxSexMale.Size = new System.Drawing.Size(53, 19);
             this.radioButtonAllSheepsForCheckBoxSexMale.TabIndex = 5;
@@ -942,7 +937,7 @@
             // 
             this.checkBoxAllSheepsSex.AutoSize = true;
             this.checkBoxAllSheepsSex.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBoxAllSheepsSex.Location = new System.Drawing.Point(15, 75);
+            this.checkBoxAllSheepsSex.Location = new System.Drawing.Point(15, 71);
             this.checkBoxAllSheepsSex.Name = "checkBoxAllSheepsSex";
             this.checkBoxAllSheepsSex.Size = new System.Drawing.Size(52, 19);
             this.checkBoxAllSheepsSex.TabIndex = 2;
@@ -954,7 +949,7 @@
             // 
             this.checkBoxAllSheepsAge.AutoSize = true;
             this.checkBoxAllSheepsAge.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBoxAllSheepsAge.Location = new System.Drawing.Point(14, 44);
+            this.checkBoxAllSheepsAge.Location = new System.Drawing.Point(14, 42);
             this.checkBoxAllSheepsAge.Name = "checkBoxAllSheepsAge";
             this.checkBoxAllSheepsAge.Size = new System.Drawing.Size(71, 19);
             this.checkBoxAllSheepsAge.TabIndex = 1;
@@ -1191,7 +1186,7 @@
             this.btnShowAllAdvViewLambs.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnShowAllAdvViewLambs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnShowAllAdvViewLambs.ForeColor = System.Drawing.Color.Black;
-            this.btnShowAllAdvViewLambs.Location = new System.Drawing.Point(104, 109);
+            this.btnShowAllAdvViewLambs.Location = new System.Drawing.Point(104, 99);
             this.btnShowAllAdvViewLambs.Name = "btnShowAllAdvViewLambs";
             this.btnShowAllAdvViewLambs.Size = new System.Drawing.Size(127, 25);
             this.btnShowAllAdvViewLambs.TabIndex = 20;
@@ -1216,7 +1211,7 @@
             this.rBShowAllLambsFemale.Checked = true;
             this.rBShowAllLambsFemale.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rBShowAllLambsFemale.Enabled = false;
-            this.rBShowAllLambsFemale.Location = new System.Drawing.Point(165, 75);
+            this.rBShowAllLambsFemale.Location = new System.Drawing.Point(165, 71);
             this.rBShowAllLambsFemale.Name = "rBShowAllLambsFemale";
             this.rBShowAllLambsFemale.Size = new System.Drawing.Size(67, 19);
             this.rBShowAllLambsFemale.TabIndex = 6;
@@ -1229,7 +1224,7 @@
             this.rBShowAllLambsMale.AutoSize = true;
             this.rBShowAllLambsMale.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rBShowAllLambsMale.Enabled = false;
-            this.rBShowAllLambsMale.Location = new System.Drawing.Point(92, 75);
+            this.rBShowAllLambsMale.Location = new System.Drawing.Point(92, 71);
             this.rBShowAllLambsMale.Name = "rBShowAllLambsMale";
             this.rBShowAllLambsMale.Size = new System.Drawing.Size(53, 19);
             this.rBShowAllLambsMale.TabIndex = 5;
@@ -1250,7 +1245,7 @@
             // 
             this.chBShowLambsSex.AutoSize = true;
             this.chBShowLambsSex.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chBShowLambsSex.Location = new System.Drawing.Point(15, 75);
+            this.chBShowLambsSex.Location = new System.Drawing.Point(15, 71);
             this.chBShowLambsSex.Name = "chBShowLambsSex";
             this.chBShowLambsSex.Size = new System.Drawing.Size(52, 19);
             this.chBShowLambsSex.TabIndex = 2;
@@ -1262,11 +1257,11 @@
             // 
             this.chBShowLambsAge.AutoSize = true;
             this.chBShowLambsAge.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chBShowLambsAge.Location = new System.Drawing.Point(14, 44);
+            this.chBShowLambsAge.Location = new System.Drawing.Point(14, 42);
             this.chBShowLambsAge.Name = "chBShowLambsAge";
-            this.chBShowLambsAge.Size = new System.Drawing.Size(71, 19);
+            this.chBShowLambsAge.Size = new System.Drawing.Size(74, 19);
             this.chBShowLambsAge.TabIndex = 1;
-            this.chBShowLambsAge.Text = "Години:";
+            this.chBShowLambsAge.Text = "Месеци:";
             this.chBShowLambsAge.UseVisualStyleBackColor = true;
             this.chBShowLambsAge.CheckedChanged += new System.EventHandler(this.chBShowLambsAge_CheckedChanged);
             // 
@@ -1379,37 +1374,6 @@
             this.btnShowAllLamsInfo.UseVisualStyleBackColor = false;
             this.btnShowAllLamsInfo.Click += new System.EventHandler(this.btnShowAllLamsInfo_Click);
             // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.richTextBox2);
-            this.tabPage4.Controls.Add(this.button1);
-            this.tabPage4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(643, 405);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "tabPage4";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.Location = new System.Drawing.Point(114, 17);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(351, 286);
-            this.richTextBox2.TabIndex = 2;
-            this.richTextBox2.Text = "";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(187, 345);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1447,7 +1411,6 @@
             this.tabPage5.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1462,7 +1425,6 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem1;
         private System.Windows.Forms.TabPage tabShowAll;
-        private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage TabPAddNew;
         private System.Windows.Forms.TabControl tabControlAddNew;
         private System.Windows.Forms.TabPage tabNewSheep;
@@ -1493,7 +1455,6 @@
         private System.Windows.Forms.TextBox textBoxEditAge;
         private System.Windows.Forms.RadioButton radioButtonEditFamale;
         private System.Windows.Forms.RadioButton radioButtonEditMale;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtAddNewLambAge;
         private System.Windows.Forms.RadioButton rBAddNewLambFemale;
@@ -1527,7 +1488,6 @@
         private System.Windows.Forms.Button btnAllSheepsRevers;
         private System.Windows.Forms.Button btnEditOk;
         private System.Windows.Forms.Button btnEditBack;
-        private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.RichTextBox richTextAllSheeps;
         private System.Windows.Forms.Button btnShowAllLambsRevers;
         private System.Windows.Forms.Label lblShowAllLambsSortSex;

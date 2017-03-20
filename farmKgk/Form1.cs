@@ -90,7 +90,7 @@ namespace farmKgk
                     strSheeps.Add($"{sh.StringLine()}");
                 }
 
-                richTextBox2.Text = (string.Join("\n", strSheeps));
+                //richTextBox2.Text = (string.Join("\n", strSheeps));
             }
         }  
 
@@ -609,13 +609,14 @@ namespace farmKgk
                 {
                     if (db.Lambs.Select(a => a.SerialNumber).Contains(textBoxEditSN.Text))
                     {
+                        labelEditAge.Text = "Месеци:";
                         lblEditThisAnimal.Text = "Агне";
 
                         EditOkBtnVisible();
 
                         var lb = db.Lambs.First(a => a.SerialNumber.Equals(textBoxEditSN.Text));
 
-                        textBoxEditAge.Text = lb.Age.ToString();
+                        textBoxEditAge.Text = lb.Мonths.ToString();
 
                         if (lb.Sex == "Female")
                         {
@@ -645,6 +646,7 @@ namespace farmKgk
                 else
                 {
                     lblEditThisAnimal.Text = "Овца";
+                    labelEditAge.Text = "Години:";
 
                     EditOkBtnVisible();
 
@@ -723,10 +725,10 @@ namespace farmKgk
                 {
                     var lmb = db.Lambs.First(a => a.SerialNumber.Equals(textBoxEditSN.Text));
 
-                    if (!lmb.Age.Equals(textBoxEditAge.Text.ToString())
+                    if (!lmb.Мonths.Equals(textBoxEditAge.Text.ToString())
                         || !lmb.Info.Equals(richTextBoxEditInfo.Text.ToString()))
                     {
-                        lmb.Age = textBoxEditAge.Text;
+                        lmb.Мonths = textBoxEditAge.Text;
                         lmb.Info = richTextBoxEditInfo.Text;
                     }
 
@@ -866,7 +868,7 @@ namespace farmKgk
                             foreach (var sh in db
                                 .Lambs
                                 .Where(a => a.Date.Equals(dateTimePickerShowAllLambs.Text.ToString())
-                                    && a.Age.Equals(txtShowAllLambsAge.Text.ToString())
+                                    && a.Мonths.Equals(txtShowAllLambsAge.Text.ToString())
                                     && !a.Sex.Equals("Female"))
                                 .ToList())
                             {
@@ -888,7 +890,7 @@ namespace farmKgk
                             foreach (var sh in db
                                 .Lambs
                                 .Where(a => a.Date.Equals(dateTimePickerShowAllLambs.Text.ToString())
-                                    && a.Age.Equals(txtShowAllLambsAge.Text.ToString())
+                                    && a.Мonths.Equals(txtShowAllLambsAge.Text.ToString())
                                     && a.Sex.Equals("Female"))
                                 .ToList())
                             {
@@ -911,7 +913,7 @@ namespace farmKgk
                         foreach (var sh in db
                             .Lambs
                             .Where(a => a.Date.Equals(dateTimePickerShowAllLambs.Text.ToString())
-                                && a.Age.Equals(txtShowAllLambsAge.Text.ToString()))
+                                && a.Мonths.Equals(txtShowAllLambsAge.Text.ToString()))
                             .ToList())
                         {
                             showListsLamb(showOnlyAge, showOnlySheepsNew, sheepsStr, sh);
@@ -1006,7 +1008,7 @@ namespace farmKgk
 
                             foreach (var sh in db
                                 .Lambs
-                                .Where(a => a.Age.Equals(txtShowAllLambsAge.Text.ToString())
+                                .Where(a => a.Мonths.Equals(txtShowAllLambsAge.Text.ToString())
                                     && !a.Sex.Equals("Female"))
                                 .ToList())
                             {
@@ -1028,7 +1030,7 @@ namespace farmKgk
 
                             foreach (var sh in db
                                 .Lambs
-                                .Where(a => a.Age.Equals(txtShowAllLambsAge.Text.ToString())
+                                .Where(a => a.Мonths.Equals(txtShowAllLambsAge.Text.ToString())
                                     && a.Sex.Equals("Female"))
                                 .ToList())
                             {
@@ -1053,7 +1055,7 @@ namespace farmKgk
 
                         foreach (var sh in db
                             .Lambs
-                            .Where(a => a.Age.Equals(txtShowAllLambsAge.Text.ToString()))
+                            .Where(a => a.Мonths.Equals(txtShowAllLambsAge.Text.ToString()))
                             .ToList())
                         {
                             showListsLamb(showOnlyAge, showOnlySheepsNew, sheepsStr, sh);
@@ -1117,7 +1119,7 @@ namespace farmKgk
         private static void showListsLamb(List<string> showOnlyAge, List<Lamb> showOnlySheepsNew, List<string> sheepsStr, Lamb sh)
         {
             sheepsStr.Add($"{sh.StringLine()}");
-            showOnlyAge.Add(sh.Age.ToString());
+            showOnlyAge.Add(sh.Мonths.ToString());
             showOnlySheepsNew.Add(sh);
         }
 
@@ -1228,7 +1230,7 @@ namespace farmKgk
                     {
                         if (sh.SerialNumber.ToString() == txtShowAllLamsSN.Text.ToString())
                         {
-                            rTextShowAllLambs.Text = ($"Дата: {sh.Date}  \nГодини: {sh.Age}  \nПол: {sh.Sex} \nСериен номер: {sh.SerialNumber} \n info: {sh.Info}");
+                            rTextShowAllLambs.Text = ($"Дата: {sh.Date}  \nГодини: {sh.Мonths}  \nПол: {sh.Sex} \nСериен номер: {sh.SerialNumber} \n info: {sh.Info}");
                         }
                     }
                 }
@@ -1272,7 +1274,7 @@ namespace farmKgk
 
             foreach (var age in ages)
             {
-                foreach (var sh in showOnlyLambs.Where(a => a.Age==age))
+                foreach (var sh in showOnlyLambs.Where(a => a.Мonths==age))
                 {
                     if (!lambsOnlyStringLs.Contains(sh.StringLine()))
                     {
