@@ -1134,9 +1134,9 @@
             this.lblShowAllLambsSortAge.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.lblShowAllLambsSortAge.Location = new System.Drawing.Point(358, 7);
             this.lblShowAllLambsSortAge.Name = "lblShowAllLambsSortAge";
-            this.lblShowAllLambsSortAge.Size = new System.Drawing.Size(41, 20);
+            this.lblShowAllLambsSortAge.Size = new System.Drawing.Size(47, 20);
             this.lblShowAllLambsSortAge.TabIndex = 36;
-            this.lblShowAllLambsSortAge.Text = "Год";
+            this.lblShowAllLambsSortAge.Text = "Мес.";
             this.lblShowAllLambsSortAge.Click += new System.EventHandler(this.lblShowAllLambsSortAge_Click);
             // 
             // lblShowAllLambsSortData
