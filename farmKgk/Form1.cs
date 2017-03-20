@@ -63,9 +63,9 @@ namespace farmKgk
                         db.Sheeps.Add(newSheep);
                         db.SaveChanges();
 
-                        TextBoxAddNewSheepSerialNumber.Text = "";
-                        textBoxAddSheepAge.Text = "";
-                        richTextBoxAddSheepInfo.Text = "";
+                        TextBoxAddNewSheepSerialNumber.Text = string.Empty;
+                        textBoxAddSheepAge.Text = string.Empty;
+                        richTextBoxAddSheepInfo.Text = string.Empty;
                         radioButtonAddSheepFemale.Checked = true;
                     }
                 }
@@ -124,12 +124,11 @@ namespace farmKgk
                     btnShowAllEdit.Visible = true;
                     btnRemoveSheep.Visible = true;
                     //hide labels for sheep info
-                    LabelSortDate.Visible = false;
-                    LabelSortSex.Visible = false;
-                    labelShowAllSheepsSN.Visible = false;
-                    labelShowAllAgeSheeps.Visible = false;
+                    LabelSortDate.Visible = default(bool);
+                    LabelSortSex.Visible = default(bool); ;
+                    labelShowAllSheepsSN.Visible = default(bool);
+                    labelShowAllAgeSheeps.Visible = default(bool);
                     
-
                     foreach (var sh in db.Sheeps.ToList())
                     {
                         if (sh.SerialNumber.ToString() == textBoxAllSheepsSN.Text.ToString())
@@ -199,6 +198,11 @@ namespace farmKgk
             }
         }
 
+
+
+
+
+
         private void checkBoxAllSheepsSex_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxAllSheepsSex.Checked == true)
@@ -229,8 +233,8 @@ namespace farmKgk
 
         private void btnAllSheepsAdvView_Click(object sender, EventArgs e)
         {
-            btnShowAllEdit.Visible = false;
-            btnRemoveSheep.Visible = false;
+            btnShowAllEdit.Visible = default(bool);
+            btnRemoveSheep.Visible = default(bool);
 
             LabelSortDate.Visible = true;
             LabelSortSex.Visible = true;
@@ -665,7 +669,7 @@ namespace farmKgk
         private void EditOkBtnVisible()
         {
             lblEditThisAnimal.Visible = true;
-            btnEditOk.Visible = false;
+            btnEditOk.Visible = default(bool);
             lblEditSex.Visible = true;
             radioButtonEditMale.Visible = true;
             radioButtonEditFamale.Visible = true;
@@ -676,7 +680,7 @@ namespace farmKgk
             btnEditEdit.Visible = true;
             btnEditBack.Visible = true;
 
-            lblEditSNInfo.Visible = false;
+            lblEditSNInfo.Visible = default(bool);
             textBoxEditSN.Location = new Point(108, 83);
             textBoxEditSN.Width = 167;
             labelEditId.Location = new Point(68, 83);
@@ -751,17 +755,17 @@ namespace farmKgk
 
         private void EditAnimalTabStartVisibale()
         {
-            lblEditThisAnimal.Visible = false;
+            lblEditThisAnimal.Visible = default(bool);
             btnEditOk.Visible = true;
-            lblEditSex.Visible = false;
-            radioButtonEditMale.Visible = false;
-            radioButtonEditFamale.Visible = false;
-            labelEditAge.Visible = false;
-            textBoxEditAge.Visible = false;
-            labelEditInfo.Visible = false;
-            richTextBoxEditInfo.Visible = false;
-            btnEditEdit.Visible = false;
-            btnEditBack.Visible = false;
+            lblEditSex.Visible = default(bool);
+            radioButtonEditMale.Visible = default(bool);
+            radioButtonEditFamale.Visible = default(bool);
+            labelEditAge.Visible = default(bool);
+            textBoxEditAge.Visible = default(bool);
+            labelEditInfo.Visible = default(bool);
+            richTextBoxEditInfo.Visible = default(bool);
+            btnEditEdit.Visible = default(bool);
+            btnEditBack.Visible = default(bool);
             labelEditId.Text = "Сериен номер:";
 
             textBoxEditSN.Location = new Point(215, 148);
@@ -777,7 +781,7 @@ namespace farmKgk
             using (var db = new farmDbContext())
             {
                 
-                if (txtAddNewLambSN.Text == "")
+                if (txtAddNewLambSN.Text == string.Empty)
                 {
                     var mbox = MessageBox.Show($"Не можете да добавяте животно без сериен номер!",
                     "Неуспешно добавяне!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -795,15 +799,15 @@ namespace farmKgk
 
                         if (rBAddNewLambMale.Checked)
                         {
-                            sexLamb = rBAddNewLambMale.Text;
+                            sexLamb = "Male";
                         }
 
                         Lamb newLamb = new Lamb(txtAddNewLambSN.Text.ToString(), sexLamb, txtAddNewLambAge.Text.ToString(), rTxtAddNewLambInfo.Text.ToString());
 
-                        txtAddNewLambSN.Text = "";
+                        txtAddNewLambSN.Text = string.Empty;
                         rBAddNewLambFemale.Checked = true;
                         txtAddNewLambAge.Text = "0";
-                        rTxtAddNewLambInfo.Text = "";
+                        rTxtAddNewLambInfo.Text = string.Empty;
 
                         db.Lambs.Add(newLamb);
                         db.SaveChanges();
@@ -819,8 +823,8 @@ namespace farmKgk
 
         private void btnShowAllAdvViewLambs_Click(object sender, EventArgs e)
         {            
-            btnRemoveLamb.Visible = false;
-            btnShowAllLambsEdit.Visible = false;
+            btnRemoveLamb.Visible = default(bool);
+            btnShowAllLambsEdit.Visible = default(bool);
 
             lblShowAllLambsSortData.Visible = true;
             lblShowAllLambsSortSex.Visible = true;
@@ -1215,10 +1219,10 @@ namespace farmKgk
                 {
                     btnRemoveLamb.Visible = true;
                     btnShowAllLambsEdit.Visible = true;
-                    lblShowAllLambsSortData.Visible = false;
-                    lblShowAllLambsSortAge.Visible = false;
-                    lblShowAllLambsSortSN.Visible = false;
-                    lblShowAllLambsSortSex.Visible = false;
+                    lblShowAllLambsSortData.Visible = default(bool);
+                    lblShowAllLambsSortAge.Visible = default(bool);
+                    lblShowAllLambsSortSN.Visible = default(bool);
+                    lblShowAllLambsSortSex.Visible = default(bool);
 
                     foreach (var sh in db.Lambs.ToList())
                     {
@@ -1240,9 +1244,9 @@ namespace farmKgk
                 db.SaveChanges();
 
                 richTextAllSheeps.Text = $"Успешно изтрихте животно {sh.SerialNumber}";
-                btnRemoveSheep.Visible = false;
-                btnShowAllEdit.Visible = false;
-                textBoxAllSheepsSN.Text = "";
+                btnRemoveSheep.Visible = default(bool);
+                btnShowAllEdit.Visible = default(bool);
+                textBoxAllSheepsSN.Text = string.Empty;
             }
 
         }
@@ -1304,17 +1308,17 @@ namespace farmKgk
 
         private void btnShowAllLambsEdit_Click(object sender, EventArgs e)
         {
-            lblEditThisAnimal.Visible = false;
+            lblEditThisAnimal.Visible = default(bool);
             btnEditOk.Visible = true;
-            lblEditSex.Visible = false;
-            radioButtonEditMale.Visible = false;
-            radioButtonEditFamale.Visible = false;
-            labelEditAge.Visible = false;
-            textBoxEditAge.Visible = false;
-            labelEditInfo.Visible = false;
-            richTextBoxEditInfo.Visible = false;
-            btnEditEdit.Visible = false;
-            btnEditBack.Visible = false;
+            lblEditSex.Visible = default(bool);
+            radioButtonEditMale.Visible = default(bool);
+            radioButtonEditFamale.Visible = default(bool);
+            labelEditAge.Visible = default(bool);
+            textBoxEditAge.Visible = default(bool);
+            labelEditInfo.Visible = default(bool);
+            richTextBoxEditInfo.Visible = default(bool);
+            btnEditEdit.Visible = default(bool);
+            btnEditBack.Visible = default(bool);
 
             textBoxEditSN.Location = new Point(215, 148);
             labelEditId.Location = new Point(91, 147);
@@ -1335,9 +1339,9 @@ namespace farmKgk
                 db.SaveChanges();
 
                 rTextShowAllLambs.Text = $"Успешно изтрихте животно {sh.SerialNumber}";
-                btnRemoveLamb.Visible = false;
-                btnShowAllLambsEdit.Visible = false;
-                txtShowAllLamsSN.Text = "";
+                btnRemoveLamb.Visible = default(bool);
+                btnShowAllLambsEdit.Visible = default(bool);
+                txtShowAllLamsSN.Text = string.Empty;
             }
         }
     }

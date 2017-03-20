@@ -65,6 +65,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAddNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddNew.Designer.cs">
+      <DependentUpon>FormAddNew.cs</DependentUpon>
+    </Compile>
     <Compile Include="Lamb.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
